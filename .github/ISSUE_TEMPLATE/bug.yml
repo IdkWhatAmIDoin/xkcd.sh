@@ -15,7 +15,7 @@ body:
         - "#936 - password strength"
         - "#1168 - tar"
         - "#1319 - automation"
-        - "other"
+        - "other (xkcd.sh, install.sh...)"
     validations:
       required: true
 
