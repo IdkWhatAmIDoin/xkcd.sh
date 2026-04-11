@@ -6,37 +6,30 @@ a collection of xkcd comics reimagined as interactive terminal programs
 
 ## comics
 
-| num | title | description |
+| num | title | description | dependencies |
 |---|-------|-------------|
-| [149](https://xkcd.com/149/) | make me a sandwich | fake shell. you know what to type. |
-| [303](https://xkcd.com/303/) | compiling | #1 programmer excuse. |
-| [327](https://xkcd.com/327/) | exploits of a mom | fake school database. little bobby tables. |
-| [353](https://xkcd.com/353/) | python | `import antigravity`. that's it. |
-| [378](https://xkcd.com/378/) | real programmers | real editors. real chaos. butterflies. |
-| [936](https://xkcd.com/936/) | password strength | Tr0ub4dor&3 vs correct horse battery staple. |
-| [979](https://xkcd.com/979/) | wisdom of the ancients | who were you, DenverCoder9? |
-| [1168](https://xkcd.com/1168/) | tar | you have ten seconds. |
-| [1319](https://xkcd.com/1319/) | automation | theory vs reality. |
+| [149](https://xkcd.com/149/) | make me a sandwich | fake shell. you know what to type. | python |
+| [303](https://xkcd.com/303/) | compiling | #1 programmer excuse. | python |
+| [327](https://xkcd.com/327/) | exploits of a mom | fake school database. little bobby tables. | python |
+| [353](https://xkcd.com/353/) | python | `import antigravity`. that's it. | python, xdotool |
+| [378](https://xkcd.com/378/) | real programmers | real editors. real chaos. butterflies. | python, nano, emacs, vim, ed |
+| [936](https://xkcd.com/936/) | password strength | Tr0ub4dor&3 vs correct horse battery staple. | python | 
+| [979](https://xkcd.com/979/) | wisdom of the ancients | who were you, DenverCoder9? | python, xdotool |
+| [1168](https://xkcd.com/1168/) | tar | you have ten seconds. | python |
+| [1319](https://xkcd.com/1319/) | automation | theory vs reality. | python |
 
 ## requirements
 
-- linux (uses `termios`, `pty`, `tty`, no windows support unless someone manually ports it over)
+- linux (may work on macos but not tested, no windows support for now)
 - python 3.x
-- `nano`, `emacs`, `vim`, `ed` (for #378)
-- `xdotool` (requires x11, for #353 and #979)
 
-## installation
+## add to PATH (optional)
 
-assuming you're in the directory of xkcd.sh, run these commands:
-
-```bash
-chmod +x ./install.sh
-./install.sh
-```
+`echo 'export PATH="$PATH:$PWD"' | tee -a ~/.zshrc` or `~/.bashrc`, depending on your shell this may vary
 
 ## usage
 
-run `xkcd [comic number]` to get a terminal representation of that comic.
+run `./xkcd` or `xkcd` (depends on if you added to PATH) `[comic number]` to get a terminal representation of that comic.
 
 ## manual usage
 
