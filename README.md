@@ -7,7 +7,7 @@ a collection of xkcd comics reimagined as interactive terminal programs.
 | num | title | description |
 |---|-------|-------------|
 | [149](https://xkcd.com/149/) | make me a sandwich | fake shell. you know what to type. |
-| [303](https://xkcd.com/303/) | compiling | #1 programm excuse. |
+| [303](https://xkcd.com/303/) | compiling | #1 programmer excuse. |
 | [327](https://xkcd.com/327/) | exploits of a mom | fake school database. little bobby tables. |
 | [353](https://xkcd.com/353/) | python | `import antigravity`. that's it. |
 | [378](https://xkcd.com/378/) | real programmers | real editors. real chaos. butterflies. |
@@ -23,7 +23,24 @@ a collection of xkcd comics reimagined as interactive terminal programs.
 - `nano`, `emacs`, `vim`, `ed` (for #378)
 - `xdotool` (for #353 and #979)
 
+## installation
+
+assuming you're in the directory of xkcd.sh, run these commands:
+
+```bash
+chmod +x ./install.sh
+./install.sh
+```
+
+those 2 commands will:
+- make it executable
+- run it
+
 ## usage
+
+run `xkcd [comic number]` to get a terminal representation of that comic.
+
+## manual usage
 
 each comic is a standalone python script:
 
@@ -32,6 +49,8 @@ python3 149/149.py
 python3 1168/1168.py
 # etc.
 ```
+
+they can be executed directly if you dont wanna install the `xkcd` tool.
 
 ## license
 
