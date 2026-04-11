@@ -1,6 +1,6 @@
 name: Comic Request
 description: Request a new xkcd comic to be added
-labels: ["enhancement"]
+labels: ["enhancement", "comic request"]
 body:
   - type: input
     id: comic
