@@ -1,8 +1,8 @@
+![tar](https://preview.redd.it/9nfvebgzykug1.gif?width=796&auto=webp&s=2e3ff14d9730698fa3eeb904e961301a933536dc)
+
 # xkcd.sh
 
-a collection of xkcd comics reimagined as interactive terminal programs.
-
-![tar](https://preview.redd.it/9nfvebgzykug1.gif?width=796&auto=webp&s=2e3ff14d9730698fa3eeb904e961301a933536dc)
+a collection of xkcd comics reimagined as interactive terminal programs
 
 ## comics
 
