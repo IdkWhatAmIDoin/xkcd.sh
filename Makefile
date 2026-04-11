@@ -1,3 +1,5 @@
+# this makefile isnt really used anymore, the whole repo is just source code so
+
 %.py: FORCE
 	pyinstaller --onefile $@
 	mv dist/$(basename $(notdir $@)) $(basename $@)
