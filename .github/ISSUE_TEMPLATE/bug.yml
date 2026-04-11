@@ -1,0 +1,60 @@
+name: Bug Report
+description: Something's broken
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: comic
+    attributes:
+      label: Which comic
+      options:
+        - "#149 - make me a sandwich"
+        - "#303 - compiling"
+        - "#327 - exploits of a mom"
+        - "#353 - python"
+        - "#378 - real programmers"
+        - "#936 - password strength"
+        - "#1168 - tar"
+        - "#1319 - automation"
+        - "other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you expect vs what actually happened
+    validations:
+      required: true
+
+  - type: textarea
+    id: error
+    attributes:
+      label: Error output
+      render: shell
+    validations:
+      required: false
+
+  - type: input
+    id: os
+    attributes:
+      label: OS
+      placeholder: e.g. Ubuntu 24.04, Arch, Debian 13
+    validations:
+      required: true
+
+  - type: input
+    id: shell
+    attributes:
+      label: Shell
+      placeholder: e.g. zsh, bash, fish
+    validations:
+      required: true
+
+  - type: input
+    id: python
+    attributes:
+      label: Python version
+      placeholder: python3 --version
+    validations:
+      required: false
