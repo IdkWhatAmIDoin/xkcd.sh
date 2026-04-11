@@ -1,0 +1,25 @@
+name: Feature Request
+description: Suggest an improvement to an existing comic or the launcher
+labels: ["enhancement"]
+body:
+  - type: input
+    id: target
+    attributes:
+      label: What comic or part of the project
+      placeholder: e.g. #1168, #378, #149
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What you want
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+    validations:
+      required: false
