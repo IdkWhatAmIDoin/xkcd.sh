@@ -1,0 +1,28 @@
+#!/bin/bash
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [ -z "$1" ]; then
+    echo "usage: xkcd <comic number>"
+    echo ""
+    echo "available comics:"
+    for dir in "$SCRIPT_DIR"/*/; do
+        num=$(basename "$dir")
+        if [[ "$num" =~ ^[0-9]+$ ]]; then
+            echo "  #$num"
+        fi
+    done
+    exit 0
+fi
+
+NUM="$1"
+
+SCRIPT="$SCRIPT_DIR/$NUM/$NUM.py"
+if [ ! -f "$SCRIPT" ]; then
+    echo "comic #$NUM not found."
+    echo "request it at https://github.com/IdkWhatAmIDoin/xkcd.sh/issues"
+    exit 1
+fi
+
+python3 "$SCRIPT"
+xdg-open "https://xkcd.com/$NUM/" &>/dev/null &
