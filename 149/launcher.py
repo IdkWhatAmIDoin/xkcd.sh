@@ -4,7 +4,8 @@ import os
 import shutil
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
-BIN = os.path.join(SCRIPT_DIR, "149")
+PYTHON = shutil.which("python3") or shutil.which("python") or "python"
+BIN_PATH = os.path.join(SCRIPT_DIR, "149.py")
 
 def clear():
     print("\033[2J\033[H", end="", flush=True)
@@ -19,9 +20,9 @@ while True:
         break
 
     if cmd == "make me a sandwich":
-        subprocess.run([BIN])
+        subprocess.run([PYTHON, BIN_PATH])
     elif cmd == "sudo make me a sandwich":
-        subprocess.run(["sudo", BIN])
+        subprocess.run(["sudo", PYTHON, BIN_PATH])
     elif cmd in ("exit", "quit", "q"):
         break
     elif cmd == "":

@@ -17,7 +17,12 @@ fi
 
 NUM="$1"
 
-SCRIPT="$SCRIPT_DIR/$NUM/$NUM.py"
+if [ "$NUM" = "149" ]; then
+    SCRIPT="$SCRIPT_DIR/$NUM/launcher.py"
+else
+    SCRIPT="$SCRIPT_DIR/$NUM/$NUM.py"
+fi
+
 if [ ! -f "$SCRIPT" ]; then
     echo "comic #$NUM not found."
     echo "request it at https://github.com/IdkWhatAmIDoin/xkcd.sh/issues"
