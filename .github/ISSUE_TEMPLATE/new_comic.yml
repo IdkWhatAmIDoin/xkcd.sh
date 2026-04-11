@@ -1,0 +1,27 @@
+name: Comic Request
+description: Request a new xkcd comic to be added
+labels: ["enhancement"]
+body:
+  - type: input
+    id: comic
+    attributes:
+      label: Comic number and title
+      placeholder: e.g. 705 - devotion to duty
+    validations:
+      required: true
+
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      placeholder: https://xkcd.com/XXXX/
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it would work as a terminal script
+      description: What's the interactive or theatrical angle?
+    validations:
+      required: true
