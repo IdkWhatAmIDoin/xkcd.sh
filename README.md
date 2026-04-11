@@ -2,6 +2,8 @@
 
 a collection of xkcd comics reimagined as interactive terminal programs.
 
+![tar](https://preview.redd.it/9nfvebgzykug1.gif?width=796&auto=webp&s=2e3ff14d9730698fa3eeb904e961301a933536dc)
+
 ## comics
 
 | num | title | description |
@@ -21,7 +23,7 @@ a collection of xkcd comics reimagined as interactive terminal programs.
 - linux (uses `termios`, `pty`, `tty`, no windows support unless someone manually ports it over)
 - python 3.x
 - `nano`, `emacs`, `vim`, `ed` (for #378)
-- `xdotool` (for #353 and #979)
+- `xdotool` (requires x11, for #353 and #979)
 
 ## installation
 
@@ -31,10 +33,6 @@ assuming you're in the directory of xkcd.sh, run these commands:
 chmod +x ./install.sh
 ./install.sh
 ```
-
-those 2 commands will:
-- make it executable
-- run it
 
 ## usage
 
