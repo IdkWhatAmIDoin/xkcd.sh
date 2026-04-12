@@ -212,6 +212,7 @@ def main():
     clear_with_art()
     show_cursor()
     move(1, 1)
+    print("original comic made by randall munroe")
 
 if __name__ == "__main__":
     try:
@@ -220,4 +221,4 @@ if __name__ == "__main__":
         show_cursor()
         clear()
         move(1, 1)
-        print('xkcd')
+        print("original comic made by randall munroe")

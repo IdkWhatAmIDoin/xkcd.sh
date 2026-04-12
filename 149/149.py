@@ -41,9 +41,11 @@ def main():
 
     if is_root:
         print("Okay.")
+        print("original comic made by randall munroe")
     else:
         print("What? Make it yourself.")
         print(r"*hint: sudo is the way to go*")
+        print("original comic made by randall munroe")
 
 if __name__ == "__main__":
     main()

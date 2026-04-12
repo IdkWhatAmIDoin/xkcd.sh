@@ -95,7 +95,7 @@ def main():
         show_cursor()
         clear()
         move(1, 1)
-        print('xkcd')
+        print("original comic made by randall munroe")
 
 if __name__ == "__main__":
     try:
@@ -103,3 +103,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         show_cursor()
         print("\033[2J\033[H", end="")
+        print("original comic made by randall munroe")

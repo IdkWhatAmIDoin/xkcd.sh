@@ -24,6 +24,8 @@ while True:
     elif cmd == "sudo make me a sandwich":
         subprocess.run(["sudo", PYTHON, BIN_PATH])
     elif cmd in ("exit", "quit", "q"):
+        clear()
+        print("original comic made by randall munroe")
         break
     elif cmd == "":
         pass

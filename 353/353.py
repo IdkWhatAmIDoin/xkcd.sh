@@ -161,9 +161,12 @@ def main():
     clear_with_art()
     show_cursor()
 
+    print("original comic made by randall munroe")
+
 if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
         show_cursor()
         clear()
+        print("original comic made by randall munroe")

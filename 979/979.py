@@ -462,9 +462,12 @@ def main():
     import shutil as sh
     sh.rmtree(tmpdir, ignore_errors=True)
 
+    print("original comic made by randall munroe")
+
 if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
         show_cursor()
         clear()
+        print("original comic made by randall munroe")
