@@ -1,13 +1,28 @@
-# this makefile isnt really used anymore, the whole repo is just source code so
+PREFIX ?= /usr/local
+SHARE_DIR = $(DESTDIR)$(PREFIX)/share/xkcd-sh
+BIN_DIR = $(DESTDIR)$(PREFIX)/bin
 
-%.py: FORCE
-	pyinstaller --onefile $@
-	mv dist/$(basename $(notdir $@)) $(basename $@)
-	mkdir -p $(shell dirname $(realpath $@))/forthepeoplewhohavepython
-	mv $@ $(shell dirname $(realpath $@))/forthepeoplewhohavepython/$(notdir $@)
-	rm -rf dist build *.spec
+.PHONY: install uninstall
 
-FORCE:
+install:
+	@if [ ! -w "$(BIN_DIR)" ] && [ "$(shell id -u)" != "0" ]; then \
+		echo "error: $(BIN_DIR) is not writable. run with sudo."; \
+		exit 1; \
+	fi
+	@echo "installing xkcd.sh to $(PREFIX)..."
+	mkdir -p $(SHARE_DIR) $(BIN_DIR)
+	sed 's|SCRIPT_DIR=.*|SCRIPT_DIR=$(PREFIX)/share/xkcd-sh|' xkcd > /tmp/xkcd-patched
+	install -Dm755 /tmp/xkcd-patched $(BIN_DIR)/xkcd
+	rm /tmp/xkcd-patched
+	cp -r [0-9]*/ $(SHARE_DIR)/
+	@echo "done. run 'xkcd' to get started."
 
-clean:
-	rm -rf dist build *.spec
+uninstall:
+	@if [ ! -w "$(BIN_DIR)" ] && [ "$(shell id -u)" != "0" ]; then \
+		echo "error: $(BIN_DIR) is not writable. run with sudo."; \
+		exit 1; \
+	fi
+	@echo "uninstalling xkcd.sh..."
+	rm -f $(BIN_DIR)/xkcd
+	rm -rf $(SHARE_DIR)
+	@echo "done."

@@ -25,6 +25,20 @@ a collection of xkcd comics reimagined as interactive terminal programs
 - python 3.x
 - linux (or some variation of linux, like wsl2)
 
+## install
+
+```bash
+git clone https://github.com/IdkWhatAmIDoin/xkcd.sh
+cd xkcd.sh
+sudo make install
+```
+
+to uninstall:
+
+```bash
+sudo make uninstall
+```
+
 ## installing dependencies
 
 most comics only need python. a few need extra stuff:
@@ -37,21 +51,9 @@ most comics only need python. a few need extra stuff:
 
 note: #378 will not work at all if any of its dependencies are missing.
 
-## windows support
-
-these comics havent been tested on windows at all yet, as my OS is linux. WSL2 may work
-
-## add to PATH (optional)
-
-`echo 'export PATH="$PATH:$PWD"' | tee -a ~/.zshrc` or `~/.bashrc`, depending on your shell this may vary
-
-## usage
-
-run `./xkcd` or `xkcd` (depends on if you added to PATH) `[comic number]` to get a terminal representation of that comic.
-
 ## manual usage
 
-each comic is a standalone python script:
+each comic is a standalone python script and can be run directly without installing:
 
 ```bash
 python3 149/149.py
@@ -59,7 +61,19 @@ python3 1168/1168.py
 # etc.
 ```
 
-they can be executed directly if you dont wanna install the `xkcd` tool.
+or if you just want to run without installing system-wide, add to PATH instead:
+
+```bash
+echo 'export PATH="$PATH:$PWD"' | tee -a ~/.zshrc  # or ~/.bashrc
+```
+
+## windows support
+
+these comics havent been tested on windows at all yet, as my OS is linux. WSL2 may work
+
+## contributing
+
+see [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## license
 
