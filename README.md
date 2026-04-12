@@ -7,7 +7,7 @@ a collection of xkcd comics reimagined as interactive terminal programs
 ## comics
 
 | num | title | description | dependencies |
-|---|-------|-------------|
+|---|-------|-------------| -------------- |
 | [149](https://xkcd.com/149/) | make me a sandwich | fake shell. you know what to type. | python |
 | [303](https://xkcd.com/303/) | compiling | #1 programmer excuse. | python |
 | [327](https://xkcd.com/327/) | exploits of a mom | fake school database. little bobby tables. | python |
