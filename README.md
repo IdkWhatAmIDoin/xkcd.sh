@@ -69,7 +69,11 @@ echo 'export PATH="$PATH:$PWD"' | tee -a ~/.zshrc  # or ~/.bashrc
 
 ## windows support
 
-these comics havent been tested on windows at all yet, as my OS is linux. WSL2 may work
+this project is developed and tested on linux. while it may work via wsl2, there is no native support for windows.
+
+i have no plans to build a windows version, but if you fork this repo to make your own windows version:
+- ill gladly link to your repo here
+- im happy to give you the code early so that you can get the windows version ready
 
 ## contributing
 
