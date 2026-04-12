@@ -20,8 +20,12 @@ a collection of xkcd comics reimagined as interactive terminal programs
 
 ## requirements
 
-- linux (may work on macos but not tested, no windows support for now)
 - python 3.x
+- linux (or some variation of linux, like wsl2)
+
+# windows support
+
+these comics havent been tested on windows at all yet, as my OS is linux. WSL2 may work
 
 ## add to PATH (optional)
 
