@@ -50,3 +50,5 @@ they can be executed directly if you dont wanna install the `xkcd` tool.
 ## license
 
 [xkcd.sh is used under the MIT license,](/LICENSE) [and all of the xkcd comics and characters are property of Randall Munroe and are used under CC BY-NC 2.5.](https://creativecommons.org/licenses/by-nc/2.5/) 
+
+This is an unofficial fan project and is fully Non-Commercial. I do not sell anything xkcd-related.
