@@ -13,6 +13,7 @@ a collection of xkcd comics reimagined as interactive terminal programs
 | [327](https://xkcd.com/327/) | exploits of a mom | fake school database. little bobby tables. | python |
 | [353](https://xkcd.com/353/) | python | `import antigravity`. that's it. | python, xdotool |
 | [378](https://xkcd.com/378/) | real programmers | real editors. real chaos. butterflies. | python, nano, emacs, vim |
+| [538](https://xkcd.com/538/) | security | crypto nerds, dont crypto nerd please. | python |
 | [705](https://xkcd.com/705/) | devotion to duty | i'd keep my server running too. | python |
 | [936](https://xkcd.com/936/) | password strength | Tr0ub4dor&3 vs correct horse battery staple. | python |
 | [979](https://xkcd.com/979/) | wisdom of the ancients | who were you, DenverCoder9? | python, xdotool |
