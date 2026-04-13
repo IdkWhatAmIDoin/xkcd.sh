@@ -8,18 +8,28 @@ open an issue using the **Comic Request** template. explain what the interactive
 
 ## running locally
 
+> [!WARNING]
+> linux is recommended, and macos is untested
+>
+> native windows is not supported due to posix-only dependencies. wsl may work, but it hasnt been tested yet
+
+first, verify you have python 3.12 or higher:
 ```bash
-git clone https://github.com/IdkWhatAmIDoin/xkcd.sh
+python3 --version
+```
+if you don't have it or the version is too old, [install python](https://www.python.org/downloads/).
+
+then clone the repo:
+```bash
+git clone https://github.com/IdkWhatAmIDoin/xkcd.sh.git
 cd xkcd.sh
-echo 'export PATH="$PATH:$PWD"' >> ~/.bashrc  # or ~/.zshrc
-source ~/.bashrc
-xkcd 303
 ```
 
-or just run the scripts directly:
-
+then run any comic directly:
 ```bash
 python3 303/303.py
+python3 1186/1186.py
+# ..etc...
 ```
 
 ## submitting a new comic
