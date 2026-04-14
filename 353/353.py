@@ -82,12 +82,6 @@ DIALOGUE = [
 ]
 
 def main():
-    has_focus_tool = shutil.which("xdotool") or shutil.which("wmctrl")
-    if not has_focus_tool:
-        print("installing xdotool...")
-        subprocess.run(["apt", "install", "-y", "xdotool"], check=False)
-        has_focus_tool = shutil.which("xdotool")
-
     clear_with_art()
     print()
     print("Python 3.12.3 (main, Nov  6 2024, 18:32:19) [GCC 13.2.0] on linux")
