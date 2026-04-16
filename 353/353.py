@@ -3,6 +3,7 @@ import subprocess
 import time
 import shutil
 import threading
+import sys
 
 def move(row, col):
     print(f"\033[{row};{col}H", end="", flush=True)
@@ -82,25 +83,41 @@ DIALOGUE = [
 ]
 
 def main():
+    has_focus_tool = shutil.which("xdotool") or shutil.which("wmctrl")
+
     clear_with_art()
     print()
     print("Python 3.12.3 (main, Nov  6 2024, 18:32:19) [GCC 13.2.0] on linux")
     print('Type "help", "copyright", "credits" or "license" for more information.')
     time.sleep(1.0)
 
-    try:
-        cmd = input(">>> ")
-    except (EOFError, KeyboardInterrupt):
-        print()
-        return
-
-    if cmd.strip() != "import antigravity":
-        name = cmd.strip().replace("import ", "")
-        print(f"ModuleNotFoundError: No module named '{name}'")
-        time.sleep(2.0)
-        clear_with_art()
-        show_cursor()
-        return
+    while True:
+        try:
+            cmd = input(">>> ")
+            if cmd.strip() not in ["import antigravity", "from __future__ import braces"]:
+                name = cmd.strip().replace("import ", "")
+                print('  File "<stdin>", line 1')
+                print(f'    {cmd}')
+                print('    ^')
+                print(f"SyntaxError: only 'import antigravity' is allowed here, maybe in the __future__. crashing now")
+                time.sleep(2.0)
+                clear_with_art()
+                show_cursor()
+                return
+            elif cmd.strip() == "from __future__ import braces":
+                print('  File "<stdin>", line 1')
+                print(f'    {cmd}')
+                print('    ^')
+                print("SyntaxError: not a chance, crashing now")
+                time.sleep(2.0)
+                clear_with_art()
+                show_cursor()
+                return
+            
+            break
+        except (EOFError, KeyboardInterrupt):
+            print()
+            break
 
     time.sleep(0.5)
 
@@ -123,7 +140,7 @@ def main():
 
     # start focus-fighting thread
     stop_event = threading.Event()
-    if has_focus_tool:
+    if has_focus_tool: # what is this?? has_focus_tool is not defined
         t = threading.Thread(target=raise_terminal_loop, args=(stop_event, terminal_wid), daemon=True)
         t.start()
 

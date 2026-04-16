@@ -1,0 +1,56 @@
+# FUCK VS CODE
+.vscode/*
+.vscode
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# THEN THIS
+# local FUCKING HISTORY
+.history/
+
+# THEN THIS
+# vs code EXTENSIONS FUCKING EXTENSIONS
+*.vsix
+
+# OH MY FUCKING GOD THEN THIS
+# FUCKING JUNK
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# then this
+# common dev folders, just for safety for other people who clone the repo and might have different build setups
+node_modules/
+dist/
+build/
+out/
+target/
+
+# then this
+# we dont use this a lot but keep it
+.env
+.env.local
+.env.*.local
+*.log
+
+# i started on this comment
+# this is a python project, so we ignore common python junk
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+
+# go up first, THEN THIS
+# MORE FUCKING PYTHON SHIT
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# THEN THIS
+# FUCKING JUNK: THE SEQUEL
+.Spotlight-V100
+.Trashes

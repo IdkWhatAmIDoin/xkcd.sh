@@ -8,16 +8,29 @@ jobs:
   mirror:
     runs-on: docker
     steps:
-      - name: Checkout repository
+      - name: Checkout repository # checking out is basically just cloning
         uses: actions/checkout@v4
         with:
           fetch-depth: 0  # fetch all history for a proper force push
 
-      - name: Modify README
+      - name: Modify README # not real repo, so we say its a mirror of the forgejo repo
         run: |
           echo "this repo is a mirror of [my self-hosted forgejo repo](http://185.68.244.71:3002/dima/xkcd.sh/), please visit it" > README.md
 
-      - name: Push to GitHub
+      - name: Inject autoclose.yml # if people didnt see the big ass readme.md, make them read it AGAIN when they do the  the thing, the issue and pr
+        run: |
+          cp .github-ignore/autoclose.yml .github/workflows/autoclose.yml
+          rm -rf .github-ignore
+
+      - name: Get latest commit message and description # ion want it to be beep boop
+        run: |
+          {
+            echo "FULL_MSG<<EOF"
+            git log -1 --pretty=%B
+            echo "EOF"
+          } >> "$GITHUB_ENV"
+
+      - name: Push to GitHub # self explanatory
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
@@ -28,5 +41,5 @@ jobs:
           REMOTE_REPO="https://x-access-token:${GH_PAT}@github.com/IdkWhatAmIDoin/xkcd.sh.git"
           
           git add .
-          git commit -m "Automated sync with new repo [skip ci]" -m "Beep boop - I am not a real person."
+          git commit -m "${{ env.FULL_MSG }} [skip ci]" -m "Beep boop - I am not a real person."
           git push --force "$REMOTE_REPO" main
