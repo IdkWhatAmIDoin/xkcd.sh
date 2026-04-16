@@ -1,0 +1,32 @@
+name: Mirror GitHub
+on:
+  push:
+    branches:
+      - main  # trigger on push to the main branch
+
+jobs:
+  mirror:
+    runs-on: docker
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # fetch all history for a proper force push
+
+      - name: Modify README
+        run: |
+          echo "this repo is a mirror of [my self-hosted forgejo repo](http://185.68.244.71:3002/dima/xkcd.sh/), please visit it" > README.md
+
+      - name: Push to GitHub
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git config --global user.name "Forgejo Bot"
+          git config --global user.email "bot+not_a@real.person"
+          
+          # Use the GH_PAT for authentication in the remote URL
+          REMOTE_REPO="https://x-access-token:${GH_PAT}@github.com/IdkWhatAmIDoin/xkcd.sh.git"
+          
+          git add .
+          git commit -m "Automated sync with new repo" -m "Beep boop - I am not a real person."
+          git push --force "$REMOTE_REPO" main
