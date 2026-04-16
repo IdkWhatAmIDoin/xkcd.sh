@@ -24,9 +24,9 @@ jobs:
           git config --global user.name "Forgejo Bot"
           git config --global user.email "bot+not_a@real.person"
           
-          # Use the GH_PAT for authentication in the remote URL
+          # use the GH_PAT for authentication in the remote URL
           REMOTE_REPO="https://x-access-token:${GH_PAT}@github.com/IdkWhatAmIDoin/xkcd.sh.git"
           
           git add .
-          git commit -m "Automated sync with new repo" -m "Beep boop - I am not a real person."
+          git commit -m "Automated sync with new repo [skip ci]" -m "Beep boop - I am not a real person."
           git push --force "$REMOTE_REPO" main
