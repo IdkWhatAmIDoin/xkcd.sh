@@ -15,7 +15,17 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const msg = "This repository is a mirror of my own Forgejo repository. Find the repo here: [xkcd.sh](http://185.68.244.71:3002/dima/xkcd.sh)"
+            const msg = `
+thanks for your contribution!
+
+this repository is a read-only mirror. the active and maintained repo lives on Forgejo:
+
+http://185.68.244.71:3002/dima/xkcd.sh
+
+please open issues and pull requests there so they don’t get lost.
+
+[ you might see commits going to this repo, but it is just a mirror-er from the Forgejo repo ]
+`
 
             await github.rest.issues.createComment({
               ...context.repo,
