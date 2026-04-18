@@ -9,10 +9,9 @@ jobs:
   mirror:
     runs-on: docker
     steps:
-      - name: Checkout repository # checking out is basically just cloning
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # fetch all history for a proper force push
+      - name: Clone repository
+        run: |
+          git clone https://185.68.244.71:3003/$GITHUB_REPOSITORY.git .
 
       - name: Modify README # not real repo, so we say its a mirror of the forgejo repo
         run: |
