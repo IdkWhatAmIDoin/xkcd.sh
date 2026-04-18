@@ -25,7 +25,7 @@ fi
 
 if [ ! -f "$SCRIPT" ]; then
     echo "comic #$NUM not found."
-    echo "request it at https://github.com/IdkWhatAmIDoin/xkcd.sh/issues"
+    echo "request it at http://185.68.244.71:3002/dima/xkcd.sh/issues"
     exit 1
 fi
 
