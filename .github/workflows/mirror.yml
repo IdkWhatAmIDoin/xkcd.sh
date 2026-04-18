@@ -16,7 +16,7 @@ jobs:
 
       - name: Modify README # not real repo, so we say its a mirror of the forgejo repo
         run: |
-          echo "this repo is a mirror of [my self-hosted forgejo repo](http://185.68.244.71:3002/dima/xkcd.sh/), please visit it" > README.md
+          echo "this repo is a mirror of [my self-hosted forgejo repo](https://185.68.244.71/dima/xkcd.sh/), please visit it" > README.md
 
       - name: Get latest commit message and description # ion want it to be beep boop
         run: |
