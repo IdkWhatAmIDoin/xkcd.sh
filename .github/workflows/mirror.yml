@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main  # trigger on push to the main branch
+      - master # if i ever use master
 
 jobs:
   mirror:
