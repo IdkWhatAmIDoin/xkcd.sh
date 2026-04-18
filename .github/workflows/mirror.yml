@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Clone repository
         run: |
-          git clone https://185.68.244.71:3003/$GITHUB_REPOSITORY.git .
+          git clone https://185.68.244.71:443/$GITHUB_REPOSITORY.git .
 
       - name: Modify README # not real repo, so we say its a mirror of the forgejo repo
         run: |
