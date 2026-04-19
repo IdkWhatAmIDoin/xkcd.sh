@@ -26,6 +26,8 @@ fi
 if [ ! -f "$SCRIPT" ]; then
     echo "comic #$NUM not found."
     echo "request it at http://185.68.244.71:3002/dima/xkcd.sh/issues"
+    echo ""
+    echo "if that comic doex exist, please run make install from the script directory, as your xkcd.sh may be outdated"
     exit 1
 fi
 
